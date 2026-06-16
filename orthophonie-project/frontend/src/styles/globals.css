@@ -1,0 +1,124 @@
+/* 1. On retire l'ancien @import de Inter car on a mis les liens dans index.html */
+
+/* 2. Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 3. ✅ NOUVELLE CONFIGURATION DES POLICES */
+@layer base {
+  html {
+    /* Texte courant en Open Sans (très lisible) */
+    font-family: 'Open Sans', sans-serif;
+    color: #374151; /* Gris gris foncé doux (plus agréable que le noir pur) */
+  }
+
+  /* Titres en Merriweather (élégant et sérieux) */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+  }
+}
+
+/* 4. VOS STYLES PERSONNALISÉS (Préservés) */
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+body {
+  /* On a retiré la ligne font-family 'Inter' ici car elle est gérée plus haut */
+  background: #f7f7f7;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Styles pour les icônes de réseaux sociaux */
+.social-icon {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.social-icon.facebook {
+  background-color: #3b5998;
+}
+
+.social-icon.instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
+
+/* Focus styles */
+*:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Sélection de texte */
+::selection {
+  background-color: #3b82f6;
+  color: white;
+}
+
+/* Classes utilitaires personnalisées */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.btn-primary {
+  @apply bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all shadow-lg;
+}
+
+.btn-secondary {
+  @apply bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-all shadow-lg;
+}

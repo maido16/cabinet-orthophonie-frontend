@@ -1,0 +1,5 @@
+export { Home } from './Home'
+export { Appointment } from './Appointment' 
+export { Confirm } from './Confirm'
+export { About } from './About'
+export { Contact } from './Contact'
